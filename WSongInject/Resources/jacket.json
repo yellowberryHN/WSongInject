@@ -1,0 +1,189 @@
+{
+  "$type": "UAssetAPI.UAsset, UAssetAPI",
+  "Info": "Serialized with UAssetAPI 1.0.0.0 (458d8af)",
+  "UseSeparateBulkDataFiles": true,
+  "EngineVersion": "VER_UE4_19",
+  "LegacyFileVersion": -7,
+  "IsUnversioned": true,
+  "FileVersionLicenseeUE4": 0,
+  "CustomVersionContainer": [],
+  "Imports": [
+    {
+      "$type": "UAssetAPI.Import, UAssetAPI",
+      "ClassPackage": "/Script/CoreUObject",
+      "ClassName": "Class",
+      "ObjectName": "Texture2D",
+      "OuterIndex": -2
+    },
+    {
+      "$type": "UAssetAPI.Import, UAssetAPI",
+      "ClassPackage": "/Script/CoreUObject",
+      "ClassName": "Package",
+      "ObjectName": "/Script/Engine",
+      "OuterIndex": 0
+    },
+    {
+      "$type": "UAssetAPI.Import, UAssetAPI",
+      "ClassPackage": "/Script/Engine",
+      "ClassName": "Texture2D",
+      "ObjectName": "Default__Texture2D",
+      "OuterIndex": -2
+    }
+  ],
+  "Exports": [
+    {
+      "$type": "UAssetAPI.NormalExport, UAssetAPI",
+      "Data": [
+        {
+          "$type": "UAssetAPI.StructTypes.StructPropertyData, UAssetAPI",
+          "StructType": "IntPoint",
+          "SerializeNone": true,
+          "StructGUID": "00000000-0000-0000-0000-000000000000",
+          "Name": "ImportedSize",
+          "DuplicationIndex": 0,
+          "Value": [
+            {
+              "$type": "UAssetAPI.StructTypes.IntPointPropertyData, UAssetAPI",
+              "Name": "ImportedSize",
+              "DuplicationIndex": 0,
+              "Value": [
+                512,
+                512
+              ]
+            }
+          ]
+        },
+        {
+          "$type": "UAssetAPI.StructTypes.StructPropertyData, UAssetAPI",
+          "StructType": "Guid",
+          "SerializeNone": true,
+          "StructGUID": "00000000-0000-0000-0000-000000000000",
+          "Name": "LightingGuid",
+          "DuplicationIndex": 0,
+          "Value": [
+            {
+              "$type": "UAssetAPI.StructTypes.GuidPropertyData, UAssetAPI",
+              "Name": "LightingGuid",
+              "DuplicationIndex": 0,
+              "Value": "4bd06271-a177-4777-ae21-36926aab72d0"
+            }
+          ]
+        },
+        {
+          "$type": "UAssetAPI.PropertyTypes.BytePropertyData, UAssetAPI",
+          "ByteType": "FName",
+          "EnumType": "TextureCompressionSettings",
+          "EnumValue": "TC_EditorIcon",
+          "Name": "CompressionSettings",
+          "DuplicationIndex": 0
+        },
+        {
+          "$type": "UAssetAPI.PropertyTypes.BytePropertyData, UAssetAPI",
+          "ByteType": "FName",
+          "EnumType": "TextureGroup",
+          "EnumValue": "TEXTUREGROUP_UI",
+          "Name": "LODGroup",
+          "DuplicationIndex": 0
+        },
+        {
+          "$type": "UAssetAPI.PropertyTypes.BoolPropertyData, UAssetAPI",
+          "Name": "SRGB",
+          "DuplicationIndex": 0,
+          "Value": false
+        }
+      ],
+      "ClassIndex": -1,
+      "SuperIndex": 0,
+      "TemplateIndex": -3,
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
+      "SerialSize": 1048914,
+      "SerialOffset": 924,
+      "bForcedExport": false,
+      "bNotForClient": false,
+      "bNotForServer": false,
+      "PackageGuid": "00000000-0000-0000-0000-000000000000",
+      "PackageFlags": "PKG_None",
+      "bNotAlwaysLoadedForEditorGame": true,
+      "bIsAsset": true,
+      "SerializationBeforeSerializationDependencies": [],
+      "CreateBeforeSerializationDependencies": [],
+      "SerializationBeforeCreateDependencies": [
+        -1,
+        -3
+      ],
+      "CreateBeforeCreateDependencies": [],
+      "Extras": [],
+      "ObjectName": "uT_J_S00_000",
+      "OuterIndex": 0
+    }
+  ],
+  "DependsMap": [
+    []
+  ],
+  "SoftPackageReferenceList": [],
+  "AssetRegistryData": [],
+  "WorldTileInfo": null,
+  "Generations": [
+    {
+      "$type": "UAssetAPI.FGenerationInfo, UAssetAPI",
+      "ExportCount": 1,
+      "NameCount": 24
+    }
+  ],
+  "PackageGuid": "471e9d51-0c43-4d06-b37e-8523fcc33764",
+  "RecordedEngineVersion": {
+    "$type": "UAssetAPI.FEngineVersion, UAssetAPI",
+    "Major": 0,
+    "Minor": 0,
+    "Patch": 0,
+    "Changelist": 0,
+    "Branch": null
+  },
+  "RecordedCompatibleWithEngineVersion": {
+    "$type": "UAssetAPI.FEngineVersion, UAssetAPI",
+    "Major": 0,
+    "Minor": 0,
+    "Patch": 0,
+    "Changelist": 0,
+    "Branch": null
+  },
+  "ChunkIDs": [],
+  "PackageFlags": "PKG_FilterEditorOnly",
+  "PackageSource": 415270023,
+  "FolderName": "None",
+  "GatherableTextDataCount": 0,
+  "GatherableTextDataOffset": 0,
+  "SearchableNamesOffset": 0,
+  "ThumbnailTableOffset": 0,
+  "CompressionFlags": 0,
+  "doWeHaveDependsMap": true,
+  "doWeHaveSoftPackageReferences": false,
+  "doWeHaveAssetRegistryData": true,
+  "doWeHaveWorldTileInfo": false,
+  "NameMap": [
+    "/Game/UI/Textures/JACKET/S00/uT_J_S00_000",
+    "/Script/CoreUObject",
+    "/Script/Engine",
+    "BoolProperty",
+    "ByteProperty",
+    "Class",
+    "CompressionSettings",
+    "Default__Texture2D",
+    "Guid",
+    "ImportedSize",
+    "IntPoint",
+    "LightingGuid",
+    "LODGroup",
+    "None",
+    "Package",
+    "PF_B8G8R8A8",
+    "SRGB",
+    "StructProperty",
+    "TC_EditorIcon",
+    "Texture2D",
+    "TextureCompressionSettings",
+    "TextureGroup",
+    "TEXTUREGROUP_UI",
+    "uT_J_S00_000"
+  ]
+}
