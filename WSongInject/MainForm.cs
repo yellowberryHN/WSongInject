@@ -543,6 +543,7 @@ namespace WSongInject
                             new FString($"/Game/UI/Textures/JACKET/{jacketAssetNameBox.Text}")
                         );
 
+                        Directory.CreateDirectory(Path.Combine(WaccaDir, $"WindowsNoEditor/Mercury/Content/UI/Textures/JACKET/{jacketAssetNameBox.Text.Substring(0,3)}"));
                         asset.Write(Path.Combine(WaccaDir, $"WindowsNoEditor/Mercury/Content/UI/Textures/JACKET/{jacketAssetNameBox.Text}.uasset"));
                     }
                 }

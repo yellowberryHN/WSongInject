@@ -107,6 +107,18 @@
             this.uniqueIDSelect = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.umtTab = new System.Windows.Forms.TabPage();
+            this.infernoGroupBox = new System.Windows.Forms.GroupBox();
+            this.inf_bRequirePurchaseChk = new System.Windows.Forms.CheckBox();
+            this.inf_gainWaccaPoint = new System.Windows.Forms.NumericUpDown();
+            this.inf_wpCostLabel = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.requiredInfernoOpenWaccaPointUpDown = new System.Windows.Forms.NumericUpDown();
+            this.inf_bIsInitItem = new System.Windows.Forms.CheckBox();
+            this.inf_bVipPreOpenChk = new System.Windows.Forms.CheckBox();
+            this.inf_itemActivateEndTimeUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.inf_itemActivateStartTimeUpDown = new System.Windows.Forms.NumericUpDown();
             this.gainWaccaPointUpDown = new System.Windows.Forms.NumericUpDown();
             this.label36 = new System.Windows.Forms.Label();
             this.bIsInitItemChk = new System.Windows.Forms.CheckBox();
@@ -122,25 +134,13 @@
             this.label33 = new System.Windows.Forms.Label();
             this.adaptStartTimeUpDown = new System.Windows.Forms.NumericUpDown();
             this.label32 = new System.Windows.Forms.Label();
-            this.inf_gainWaccaPoint = new System.Windows.Forms.NumericUpDown();
-            this.label26 = new System.Windows.Forms.Label();
-            this.inf_bIsInitItem = new System.Windows.Forms.CheckBox();
-            this.inf_itemActivateEndTimeUpDown = new System.Windows.Forms.NumericUpDown();
-            this.label28 = new System.Windows.Forms.Label();
-            this.inf_itemActivateStartTimeUpDown = new System.Windows.Forms.NumericUpDown();
-            this.label29 = new System.Windows.Forms.Label();
-            this.inf_bVipPreOpenChk = new System.Windows.Forms.CheckBox();
-            this.requiredInfernoOpenWaccaPointUpDown = new System.Windows.Forms.NumericUpDown();
-            this.inf_wpCostLabel = new System.Windows.Forms.Label();
-            this.inf_bRequirePurchaseChk = new System.Windows.Forms.CheckBox();
             this.usefulHints = new System.Windows.Forms.ToolTip(this.components);
             this.loadReminder = new System.Windows.Forms.Label();
-            this.infernoGroupBox = new System.Windows.Forms.GroupBox();
+            this.label38 = new System.Windows.Forms.Label();
             this.difficultyInfernoLvUpDown = new WSongInject.DifficultyNUD();
             this.difficultyExtremeLvUpDown = new WSongInject.DifficultyNUD();
             this.difficultyHardLvUpDown = new WSongInject.DifficultyNUD();
             this.difficultyNormalLvUpDown = new WSongInject.DifficultyNUD();
-            this.label38 = new System.Windows.Forms.Label();
             this.songTabs.SuspendLayout();
             this.mptTab.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -166,17 +166,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.waccaPointCostUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uniqueIDSelect)).BeginInit();
             this.umtTab.SuspendLayout();
+            this.infernoGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inf_gainWaccaPoint)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.requiredInfernoOpenWaccaPointUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inf_itemActivateEndTimeUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inf_itemActivateStartTimeUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gainWaccaPointUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemActivateEndTimeUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemActivateStartTimeUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.requiredMusicOpenWaccaPointUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adaptEndTimeUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adaptStartTimeUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inf_gainWaccaPoint)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inf_itemActivateEndTimeUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inf_itemActivateStartTimeUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.requiredInfernoOpenWaccaPointUpDown)).BeginInit();
-            this.infernoGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.difficultyInfernoLvUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.difficultyExtremeLvUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.difficultyHardLvUpDown)).BeginInit();
@@ -1087,6 +1087,146 @@
             this.umtTab.Text = "Unlock Settings";
             this.umtTab.UseVisualStyleBackColor = true;
             // 
+            // infernoGroupBox
+            // 
+            this.infernoGroupBox.Controls.Add(this.inf_bRequirePurchaseChk);
+            this.infernoGroupBox.Controls.Add(this.inf_gainWaccaPoint);
+            this.infernoGroupBox.Controls.Add(this.inf_wpCostLabel);
+            this.infernoGroupBox.Controls.Add(this.label26);
+            this.infernoGroupBox.Controls.Add(this.requiredInfernoOpenWaccaPointUpDown);
+            this.infernoGroupBox.Controls.Add(this.inf_bIsInitItem);
+            this.infernoGroupBox.Controls.Add(this.inf_bVipPreOpenChk);
+            this.infernoGroupBox.Controls.Add(this.inf_itemActivateEndTimeUpDown);
+            this.infernoGroupBox.Controls.Add(this.label29);
+            this.infernoGroupBox.Controls.Add(this.label28);
+            this.infernoGroupBox.Controls.Add(this.inf_itemActivateStartTimeUpDown);
+            this.infernoGroupBox.Location = new System.Drawing.Point(182, 8);
+            this.infernoGroupBox.Name = "infernoGroupBox";
+            this.infernoGroupBox.Size = new System.Drawing.Size(166, 201);
+            this.infernoGroupBox.TabIndex = 70;
+            this.infernoGroupBox.TabStop = false;
+            this.infernoGroupBox.Text = "Inferno Settings";
+            // 
+            // inf_bRequirePurchaseChk
+            // 
+            this.inf_bRequirePurchaseChk.AutoSize = true;
+            this.inf_bRequirePurchaseChk.Location = new System.Drawing.Point(6, 19);
+            this.inf_bRequirePurchaseChk.Name = "inf_bRequirePurchaseChk";
+            this.inf_bRequirePurchaseChk.Size = new System.Drawing.Size(116, 17);
+            this.inf_bRequirePurchaseChk.TabIndex = 59;
+            this.inf_bRequirePurchaseChk.Text = "Requires Purchase";
+            this.inf_bRequirePurchaseChk.UseVisualStyleBackColor = true;
+            this.inf_bRequirePurchaseChk.CheckedChanged += new System.EventHandler(this.inf_bRequirePurchaseChk_CheckedChanged);
+            // 
+            // inf_gainWaccaPoint
+            // 
+            this.inf_gainWaccaPoint.Location = new System.Drawing.Point(59, 171);
+            this.inf_gainWaccaPoint.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.inf_gainWaccaPoint.Name = "inf_gainWaccaPoint";
+            this.inf_gainWaccaPoint.Size = new System.Drawing.Size(68, 20);
+            this.inf_gainWaccaPoint.TabIndex = 69;
+            // 
+            // inf_wpCostLabel
+            // 
+            this.inf_wpCostLabel.AutoSize = true;
+            this.inf_wpCostLabel.Enabled = false;
+            this.inf_wpCostLabel.Location = new System.Drawing.Point(3, 42);
+            this.inf_wpCostLabel.Name = "inf_wpCostLabel";
+            this.inf_wpCostLabel.Size = new System.Drawing.Size(52, 13);
+            this.inf_wpCostLabel.TabIndex = 60;
+            this.inf_wpCostLabel.Text = "WP Cost:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(3, 173);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(50, 13);
+            this.label26.TabIndex = 68;
+            this.label26.Text = "Gain WP";
+            this.usefulHints.SetToolTip(this.label26, "I have no clue what this does. Use at your own risk.");
+            // 
+            // requiredInfernoOpenWaccaPointUpDown
+            // 
+            this.requiredInfernoOpenWaccaPointUpDown.Enabled = false;
+            this.requiredInfernoOpenWaccaPointUpDown.Location = new System.Drawing.Point(61, 40);
+            this.requiredInfernoOpenWaccaPointUpDown.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.requiredInfernoOpenWaccaPointUpDown.Name = "requiredInfernoOpenWaccaPointUpDown";
+            this.requiredInfernoOpenWaccaPointUpDown.Size = new System.Drawing.Size(68, 20);
+            this.requiredInfernoOpenWaccaPointUpDown.TabIndex = 61;
+            // 
+            // inf_bIsInitItem
+            // 
+            this.inf_bIsInitItem.AutoSize = true;
+            this.inf_bIsInitItem.Checked = true;
+            this.inf_bIsInitItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.inf_bIsInitItem.Location = new System.Drawing.Point(6, 144);
+            this.inf_bIsInitItem.Name = "inf_bIsInitItem";
+            this.inf_bIsInitItem.Size = new System.Drawing.Size(87, 17);
+            this.inf_bIsInitItem.TabIndex = 67;
+            this.inf_bIsInitItem.Text = "Initial Unlock";
+            this.inf_bIsInitItem.UseVisualStyleBackColor = true;
+            // 
+            // inf_bVipPreOpenChk
+            // 
+            this.inf_bVipPreOpenChk.AutoSize = true;
+            this.inf_bVipPreOpenChk.Location = new System.Drawing.Point(6, 69);
+            this.inf_bVipPreOpenChk.Name = "inf_bVipPreOpenChk";
+            this.inf_bVipPreOpenChk.Size = new System.Drawing.Size(106, 17);
+            this.inf_bVipPreOpenChk.TabIndex = 62;
+            this.inf_bVipPreOpenChk.Text = "VIP Early Unlock";
+            this.inf_bVipPreOpenChk.UseVisualStyleBackColor = true;
+            // 
+            // inf_itemActivateEndTimeUpDown
+            // 
+            this.inf_itemActivateEndTimeUpDown.Location = new System.Drawing.Point(88, 118);
+            this.inf_itemActivateEndTimeUpDown.Maximum = new decimal(new int[] {
+            -1,
+            2147483647,
+            0,
+            0});
+            this.inf_itemActivateEndTimeUpDown.Name = "inf_itemActivateEndTimeUpDown";
+            this.inf_itemActivateEndTimeUpDown.Size = new System.Drawing.Size(68, 20);
+            this.inf_itemActivateEndTimeUpDown.TabIndex = 66;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(3, 94);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(79, 13);
+            this.label29.TabIndex = 63;
+            this.label29.Text = "Activation Start";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(3, 120);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(76, 13);
+            this.label28.TabIndex = 65;
+            this.label28.Text = "Activation End";
+            // 
+            // inf_itemActivateStartTimeUpDown
+            // 
+            this.inf_itemActivateStartTimeUpDown.Location = new System.Drawing.Point(88, 92);
+            this.inf_itemActivateStartTimeUpDown.Maximum = new decimal(new int[] {
+            -1,
+            2147483647,
+            0,
+            0});
+            this.inf_itemActivateStartTimeUpDown.Name = "inf_itemActivateStartTimeUpDown";
+            this.inf_itemActivateStartTimeUpDown.Size = new System.Drawing.Size(68, 20);
+            this.inf_itemActivateStartTimeUpDown.TabIndex = 64;
+            // 
             // gainWaccaPointUpDown
             // 
             this.gainWaccaPointUpDown.Location = new System.Drawing.Point(59, 210);
@@ -1249,126 +1389,6 @@
             this.label32.TabIndex = 40;
             this.label32.Text = "Adapt Start Time";
             // 
-            // inf_gainWaccaPoint
-            // 
-            this.inf_gainWaccaPoint.Location = new System.Drawing.Point(59, 171);
-            this.inf_gainWaccaPoint.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.inf_gainWaccaPoint.Name = "inf_gainWaccaPoint";
-            this.inf_gainWaccaPoint.Size = new System.Drawing.Size(68, 20);
-            this.inf_gainWaccaPoint.TabIndex = 69;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(3, 173);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(50, 13);
-            this.label26.TabIndex = 68;
-            this.label26.Text = "Gain WP";
-            this.usefulHints.SetToolTip(this.label26, "I have no clue what this does. Use at your own risk.");
-            // 
-            // inf_bIsInitItem
-            // 
-            this.inf_bIsInitItem.AutoSize = true;
-            this.inf_bIsInitItem.Checked = true;
-            this.inf_bIsInitItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.inf_bIsInitItem.Location = new System.Drawing.Point(6, 144);
-            this.inf_bIsInitItem.Name = "inf_bIsInitItem";
-            this.inf_bIsInitItem.Size = new System.Drawing.Size(87, 17);
-            this.inf_bIsInitItem.TabIndex = 67;
-            this.inf_bIsInitItem.Text = "Initial Unlock";
-            this.inf_bIsInitItem.UseVisualStyleBackColor = true;
-            // 
-            // inf_itemActivateEndTimeUpDown
-            // 
-            this.inf_itemActivateEndTimeUpDown.Location = new System.Drawing.Point(88, 118);
-            this.inf_itemActivateEndTimeUpDown.Maximum = new decimal(new int[] {
-            -1,
-            2147483647,
-            0,
-            0});
-            this.inf_itemActivateEndTimeUpDown.Name = "inf_itemActivateEndTimeUpDown";
-            this.inf_itemActivateEndTimeUpDown.Size = new System.Drawing.Size(68, 20);
-            this.inf_itemActivateEndTimeUpDown.TabIndex = 66;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(3, 120);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(76, 13);
-            this.label28.TabIndex = 65;
-            this.label28.Text = "Activation End";
-            // 
-            // inf_itemActivateStartTimeUpDown
-            // 
-            this.inf_itemActivateStartTimeUpDown.Location = new System.Drawing.Point(88, 92);
-            this.inf_itemActivateStartTimeUpDown.Maximum = new decimal(new int[] {
-            -1,
-            2147483647,
-            0,
-            0});
-            this.inf_itemActivateStartTimeUpDown.Name = "inf_itemActivateStartTimeUpDown";
-            this.inf_itemActivateStartTimeUpDown.Size = new System.Drawing.Size(68, 20);
-            this.inf_itemActivateStartTimeUpDown.TabIndex = 64;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(3, 94);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(79, 13);
-            this.label29.TabIndex = 63;
-            this.label29.Text = "Activation Start";
-            // 
-            // inf_bVipPreOpenChk
-            // 
-            this.inf_bVipPreOpenChk.AutoSize = true;
-            this.inf_bVipPreOpenChk.Location = new System.Drawing.Point(6, 69);
-            this.inf_bVipPreOpenChk.Name = "inf_bVipPreOpenChk";
-            this.inf_bVipPreOpenChk.Size = new System.Drawing.Size(106, 17);
-            this.inf_bVipPreOpenChk.TabIndex = 62;
-            this.inf_bVipPreOpenChk.Text = "VIP Early Unlock";
-            this.inf_bVipPreOpenChk.UseVisualStyleBackColor = true;
-            // 
-            // requiredInfernoOpenWaccaPointUpDown
-            // 
-            this.requiredInfernoOpenWaccaPointUpDown.Enabled = false;
-            this.requiredInfernoOpenWaccaPointUpDown.Location = new System.Drawing.Point(61, 40);
-            this.requiredInfernoOpenWaccaPointUpDown.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.requiredInfernoOpenWaccaPointUpDown.Name = "requiredInfernoOpenWaccaPointUpDown";
-            this.requiredInfernoOpenWaccaPointUpDown.Size = new System.Drawing.Size(68, 20);
-            this.requiredInfernoOpenWaccaPointUpDown.TabIndex = 61;
-            // 
-            // inf_wpCostLabel
-            // 
-            this.inf_wpCostLabel.AutoSize = true;
-            this.inf_wpCostLabel.Enabled = false;
-            this.inf_wpCostLabel.Location = new System.Drawing.Point(3, 42);
-            this.inf_wpCostLabel.Name = "inf_wpCostLabel";
-            this.inf_wpCostLabel.Size = new System.Drawing.Size(52, 13);
-            this.inf_wpCostLabel.TabIndex = 60;
-            this.inf_wpCostLabel.Text = "WP Cost:";
-            // 
-            // inf_bRequirePurchaseChk
-            // 
-            this.inf_bRequirePurchaseChk.AutoSize = true;
-            this.inf_bRequirePurchaseChk.Location = new System.Drawing.Point(6, 19);
-            this.inf_bRequirePurchaseChk.Name = "inf_bRequirePurchaseChk";
-            this.inf_bRequirePurchaseChk.Size = new System.Drawing.Size(116, 17);
-            this.inf_bRequirePurchaseChk.TabIndex = 59;
-            this.inf_bRequirePurchaseChk.Text = "Requires Purchase";
-            this.inf_bRequirePurchaseChk.UseVisualStyleBackColor = true;
-            this.inf_bRequirePurchaseChk.CheckedChanged += new System.EventHandler(this.inf_bRequirePurchaseChk_CheckedChanged);
-            // 
             // loadReminder
             // 
             this.loadReminder.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1379,34 +1399,20 @@
             this.loadReminder.Text = "Hey, maybe you should load something.";
             this.loadReminder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // infernoGroupBox
+            // label38
             // 
-            this.infernoGroupBox.Controls.Add(this.inf_bRequirePurchaseChk);
-            this.infernoGroupBox.Controls.Add(this.inf_gainWaccaPoint);
-            this.infernoGroupBox.Controls.Add(this.inf_wpCostLabel);
-            this.infernoGroupBox.Controls.Add(this.label26);
-            this.infernoGroupBox.Controls.Add(this.requiredInfernoOpenWaccaPointUpDown);
-            this.infernoGroupBox.Controls.Add(this.inf_bIsInitItem);
-            this.infernoGroupBox.Controls.Add(this.inf_bVipPreOpenChk);
-            this.infernoGroupBox.Controls.Add(this.inf_itemActivateEndTimeUpDown);
-            this.infernoGroupBox.Controls.Add(this.label29);
-            this.infernoGroupBox.Controls.Add(this.label28);
-            this.infernoGroupBox.Controls.Add(this.inf_itemActivateStartTimeUpDown);
-            this.infernoGroupBox.Location = new System.Drawing.Point(182, 8);
-            this.infernoGroupBox.Name = "infernoGroupBox";
-            this.infernoGroupBox.Size = new System.Drawing.Size(166, 201);
-            this.infernoGroupBox.TabIndex = 70;
-            this.infernoGroupBox.TabStop = false;
-            this.infernoGroupBox.Text = "Inferno Settings";
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.ForeColor = System.Drawing.Color.Red;
+            this.label38.Location = new System.Drawing.Point(12, 220);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(776, 50);
+            this.label38.TabIndex = 15;
+            this.label38.Text = "Use this tool at your own risk. Make backups.";
+            this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // difficultyInfernoLvUpDown
             // 
             this.difficultyInfernoLvUpDown.DecimalPlaces = 1;
-            this.difficultyInfernoLvUpDown.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
             this.difficultyInfernoLvUpDown.Location = new System.Drawing.Point(45, 276);
             this.difficultyInfernoLvUpDown.Maximum = new decimal(new int[] {
             9999,
@@ -1421,11 +1427,6 @@
             // difficultyExtremeLvUpDown
             // 
             this.difficultyExtremeLvUpDown.DecimalPlaces = 1;
-            this.difficultyExtremeLvUpDown.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
             this.difficultyExtremeLvUpDown.Location = new System.Drawing.Point(45, 200);
             this.difficultyExtremeLvUpDown.Maximum = new decimal(new int[] {
             9999,
@@ -1445,11 +1446,6 @@
             // difficultyHardLvUpDown
             // 
             this.difficultyHardLvUpDown.DecimalPlaces = 1;
-            this.difficultyHardLvUpDown.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
             this.difficultyHardLvUpDown.Location = new System.Drawing.Point(45, 129);
             this.difficultyHardLvUpDown.Maximum = new decimal(new int[] {
             9999,
@@ -1469,11 +1465,6 @@
             // difficultyNormalLvUpDown
             // 
             this.difficultyNormalLvUpDown.DecimalPlaces = 1;
-            this.difficultyNormalLvUpDown.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
             this.difficultyNormalLvUpDown.Location = new System.Drawing.Point(45, 58);
             this.difficultyNormalLvUpDown.Maximum = new decimal(new int[] {
             9999,
@@ -1489,17 +1480,6 @@
             0,
             0});
             this.difficultyNormalLvUpDown.ValueChanged += new System.EventHandler(this.difficultyLvUpDown_ValueChanged);
-            // 
-            // label38
-            // 
-            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.ForeColor = System.Drawing.Color.Red;
-            this.label38.Location = new System.Drawing.Point(12, 220);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(776, 50);
-            this.label38.TabIndex = 15;
-            this.label38.Text = "Use this tool at your own risk. Make backups.";
-            this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -1544,18 +1524,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.uniqueIDSelect)).EndInit();
             this.umtTab.ResumeLayout(false);
             this.umtTab.PerformLayout();
+            this.infernoGroupBox.ResumeLayout(false);
+            this.infernoGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inf_gainWaccaPoint)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.requiredInfernoOpenWaccaPointUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inf_itemActivateEndTimeUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inf_itemActivateStartTimeUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gainWaccaPointUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemActivateEndTimeUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemActivateStartTimeUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.requiredMusicOpenWaccaPointUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adaptEndTimeUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adaptStartTimeUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inf_gainWaccaPoint)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inf_itemActivateEndTimeUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inf_itemActivateStartTimeUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.requiredInfernoOpenWaccaPointUpDown)).EndInit();
-            this.infernoGroupBox.ResumeLayout(false);
-            this.infernoGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.difficultyInfernoLvUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.difficultyExtremeLvUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.difficultyHardLvUpDown)).EndInit();
