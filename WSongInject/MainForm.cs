@@ -565,6 +565,10 @@ namespace WSongInject
             if (bmp.PixelFormat != PixelFormat.Format32bppArgb)
                 throw new Exception("Unhandled PixelFormat");
 
+            if (!BitConverter.IsLittleEndian)
+                // must double check the setting of the pixels below in the unsafe block
+                throw new Exception("Big-endian not handled yet");
+
             // Convert the ARGB bitmap to BGRA data
             var pixels = new byte[4 * bmp.Size.Width * bmp.Size.Height];
             int i = 0;
@@ -580,7 +584,6 @@ namespace WSongInject
                 {
                     for (int x = 0; x < bmp.Size.Width; x++)
                     {
-                        // reversed on ARM64, what about x64?
                         pixels[i++] = *ptr;
                         pixels[i++] = *(ptr + 1);
                         pixels[i++] = *(ptr + 2);
@@ -597,6 +600,10 @@ namespace WSongInject
 
         private void ApplyUexpFixup(string assetPath, string expPath)
         {
+            if (!BitConverter.IsLittleEndian)
+                // must double check the result of BitConveter.GetBytes() for the new size
+                throw new Exception("Big-endian not handled yet");
+
             // Get the header size from the uasset file
             int headerSize = -1;
             using (var file = File.OpenRead(assetPath))
