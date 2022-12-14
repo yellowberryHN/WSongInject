@@ -53,9 +53,9 @@ namespace WSongInject.Unreal
                 if (elementCount != elementCountDisk)
                     throw new UnhandledUnrealReadException("Expected elementCount == elementCountDisk");
 
-                var bulkDataContainerOffset = reader.ReadUInt64(); // unknown, always seems to be 1178
-                if (bulkDataContainerOffset != 1178)
-                    throw new UnhandledUnrealReadException("Expected offset to be 1178");
+                var bulkDataContainerOffset = reader.ReadUInt64(); // unknown
+                if (bulkDataContainerOffset != 9999)
+                    throw new UnhandledUnrealReadException("Expected offset to be ?");
 
                 Pixels = reader.ReadBytes((int)elementCount);
 
