@@ -517,28 +517,13 @@ namespace WSongInject
                     {
                         jacket.ObjectName = new FName(jacketAssetNameBox.Text.Substring(3));
 
-                        // Convert the texture to BGRA data
-                        var pixels = new byte[4 * bmp.Size.Width * bmp.Size.Height];
-                        int i = 0;
-                        for (int y = 0; y < bmp.Size.Height; y++)
-                        {
-                            for (int x = 0; x < bmp.Size.Width; x++)
-                            {
-                                // winforms fucking sucks so I had to do this.
-                                // what a terrible, slow piece of code
-                                var c = bmp.GetPixel(x, y);
-                                pixels[i++] = c.B;
-                                pixels[i++] = c.G;
-                                pixels[i++] = c.R;
-                                pixels[i++] = c.A;
-                            }
-                        }
-                        var texture = new FTexture2D(bmp.Size.Width, bmp.Size.Height, pixels);
+                        var texture = BitmapToFTexture2D(bmp);
 
                         using (var ms = new MemoryStream())
                         using (var writer = new BinaryWriter(ms))
                         {
                             texture.Write(writer);
+                            File.WriteAllBytes("rebuild", ms.ToArray());
                             jacket.Extras = ms.ToArray();
                         }
 
@@ -558,6 +543,41 @@ namespace WSongInject
         private void createJacketBtn_Click(object sender, EventArgs e)
         {
             makeJacket();
+        }
+
+        private FTexture2D BitmapToFTexture2D(Bitmap bmp)
+        {
+            if (bmp.PixelFormat != PixelFormat.Format32bppArgb)
+                throw new Exception("Unhandled PixelFormat");
+
+            // Convert the ARGB bitmap to BGRA data
+            var pixels = new byte[4 * bmp.Size.Width * bmp.Size.Height];
+            int i = 0;
+
+            Rectangle rect = new Rectangle(0, 0, bmp.Width, bmp.Height);
+            var bmpData = bmp.LockBits(rect, ImageLockMode.ReadOnly, bmp.PixelFormat);
+
+            // I know, but it's fast...
+            unsafe
+            {
+                var ptr = (byte*)bmpData.Scan0;
+                for (int y = 0; y < bmp.Size.Height; y++)
+                {
+                    for (int x = 0; x < bmp.Size.Width; x++)
+                    {
+                        // reversed on ARM64, what about x64?
+                        pixels[i++] = *ptr;
+                        pixels[i++] = *(ptr + 1);
+                        pixels[i++] = *(ptr + 2);
+                        pixels[i++] = *(ptr + 3);
+                        ptr += 4;
+                    }
+                }
+            }
+
+            bmp.UnlockBits(bmpData);
+
+            return new FTexture2D(bmp.Size.Width, bmp.Size.Height, pixels);
         }
     }
 }
