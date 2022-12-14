@@ -15,7 +15,7 @@ namespace WSongInject.Unreal
         int SizeY { get; set; } = 256;
         int NumSlices { get; set; } = 1;
         string PixelFormat { get; set; } = "PF_B8G8R8A8";
-        int FirstMip { get; set; } = 1;
+        int FirstMip { get; set; } = 0;
         uint BulkByteFlags { get; set; } = 72;
         ulong ContainerOffset { get; set; } = 1178; // ?
         byte[] Pixels { get; set; }
@@ -79,9 +79,9 @@ namespace WSongInject.Unreal
 
         internal int CalculatePlatformDataSize()
         {
-            // header = 64 bytes
+            // header = 60 bytes
             // mipmap info at end = 16 bytes
-            return 64 + Pixels.Length + 16;
+            return 60 + Pixels.Length + 16;
         }
 
         internal void Write(BinaryWriter writer)
