@@ -31,7 +31,7 @@ namespace WSongInject.Unreal
         public FTexture2D(int width, int height, byte[] pixels)
         {
             TexturePlatformData = new FTexturePlatformData(width, height, pixels);
-            ContainerSize = (uint)TexturePlatformData.CalculatePlatformDataSize() + ?;
+            ContainerSize = (uint)TexturePlatformData.CalculatePlatformDataSize();
         }
 
         public void Write(BinaryWriter writer)

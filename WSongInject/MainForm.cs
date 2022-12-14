@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.IO.Pipes;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -503,9 +504,14 @@ namespace WSongInject
                 if (ofd.ShowDialog() == CommonFileDialogResult.Ok)
                 {
                     var bmp = new Bitmap(ofd.FileName);
-                    if(bmp.Size.Width != bmp.Size.Height)
+                    if (bmp.Size.Width != bmp.Size.Height)
                     {
                         MessageBox.Show($"Error: Jacket size must be a square!", "WACCA Song Injector", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (!IsPowerOfTwo((ulong)bmp.Size.Width))
+                    {
+                        MessageBox.Show($"Error: Jacket size must be a power of 2!", "WACCA Song Injector", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
@@ -515,29 +521,38 @@ namespace WSongInject
 
                     if (asset.Exports[0] is NormalExport jacket)
                     {
-                        jacket.ObjectName = new FName(jacketAssetNameBox.Text.Substring(3));
+                        var baseName = jacketAssetNameBox.Text.Substring(4);
+                        jacket.ObjectName = new FName(baseName);
 
-                        var texture = BitmapToFTexture2D(bmp);
+                        var texture = BitmapToFTexture2D(asset, bmp);
 
                         using (var ms = new MemoryStream())
                         using (var writer = new BinaryWriter(ms))
                         {
                             texture.Write(writer);
-                            File.WriteAllBytes("rebuild", ms.ToArray());
                             jacket.Extras = ms.ToArray();
                         }
 
-                        asset.SetNameReference(asset.SearchNameReference(new FString("uT_J_S00_000")), new FString(jacketAssetNameBox.Text.Substring(3)));
+                        asset.SetNameReference(asset.SearchNameReference(new FString("uT_J_S00_000")), new FString(baseName));
                         asset.SetNameReference(asset.SearchNameReference(
                             new FString("/Game/UI/Textures/JACKET/S00/uT_J_S00_000")),
                             new FString($"/Game/UI/Textures/JACKET/{jacketAssetNameBox.Text}")
                         );
 
+                        var outAssetPath = Path.Combine(WaccaDir, $"WindowsNoEditor/Mercury/Content/UI/Textures/JACKET/{jacketAssetNameBox.Text}.uasset");
                         Directory.CreateDirectory(Path.Combine(WaccaDir, $"WindowsNoEditor/Mercury/Content/UI/Textures/JACKET/{jacketAssetNameBox.Text.Substring(0,3)}"));
-                        asset.Write(Path.Combine(WaccaDir, $"WindowsNoEditor/Mercury/Content/UI/Textures/JACKET/{jacketAssetNameBox.Text}.uasset"));
+                        asset.Write(outAssetPath);
+
+                        ApplyUexpFixup(outAssetPath, Path.ChangeExtension(outAssetPath, "uexp"));
                     }
                 }
             }
+        }
+
+        // https://stackoverflow.com/a/600306
+        private static bool IsPowerOfTwo(ulong x)
+        {
+            return (x != 0) && ((x & (x - 1)) == 0);
         }
 
         private void createJacketBtn_Click(object sender, EventArgs e)
@@ -545,7 +560,7 @@ namespace WSongInject
             makeJacket();
         }
 
-        private FTexture2D BitmapToFTexture2D(Bitmap bmp)
+        private FTexture2D BitmapToFTexture2D(UAsset asset, Bitmap bmp)
         {
             if (bmp.PixelFormat != PixelFormat.Format32bppArgb)
                 throw new Exception("Unhandled PixelFormat");
@@ -578,6 +593,38 @@ namespace WSongInject
             bmp.UnlockBits(bmpData);
 
             return new FTexture2D(bmp.Size.Width, bmp.Size.Height, pixels);
+        }
+
+        private void ApplyUexpFixup(string assetPath, string expPath)
+        {
+            // Get the header size from the uasset file
+            int headerSize = -1;
+            using (var file = File.OpenRead(assetPath))
+            {
+                using (var reader = new BinaryReader(file))
+                {
+                    file.Seek(0x18, SeekOrigin.Begin);
+                    headerSize = reader.ReadInt32();
+                }
+            }
+            if (headerSize < 0 || headerSize > 2048)
+                throw new Exception("expected header size is out of range");
+
+            // Get the size of the uexp file so we can subtract 12 from it
+            // Since we're not changing the size of the export, it should be stable even after another save
+            int uexpSize = (int)new FileInfo(expPath).Length;
+
+            // Now, read the asset back in with UAssetAPI to modify the field in Extras
+            var asset = new UAsset(assetPath, UE4Version.VER_UE4_19);
+            var jacket = asset.Exports[0] as NormalExport;
+
+            // ...hack lol
+            var newSize = BitConverter.GetBytes(uexpSize - 12 + headerSize);
+            for (var i = 0; i < newSize.Length; i++)
+            {
+                jacket.Extras[20 + i] = newSize[i];
+            }
+            asset.Write(assetPath);
         }
     }
 }
