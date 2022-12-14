@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using UAssetAPI;
 using UAssetAPI.PropertyTypes;
 using UAssetAPI.StructTypes;
+using WSongInject.Unreal;
 
 namespace WSongInject
 {
@@ -494,24 +495,21 @@ namespace WSongInject
             inf_wpCostLabel.Enabled = requiredInfernoOpenWaccaPointUpDown.Enabled = inf_bRequirePurchaseChk.Checked;
         }
 
-        private string jacketHeader = "AAAAAAEAAQABAAAADwAAAAAAAADmBBAAAAIAAAACAAABAAAADAAAAFBGX0I4RzhSOEE4AAAAAAABAAAAAQAAAEgAAAAAABAAAAAQAN4EAAAAAAAA";
-        private string jacketFooter = "AAIAAAACAAANAAAAAAAAAA==";
-
         private void makeJacket()
         {
             using (var ofd = new CommonOpenFileDialog { Title = "Select a jacket image"})
             {
-                ofd.Filters.Add(new CommonFileDialogFilter("Jacket Image (512x512)", "*.png;*.bmp;*.jpg;*.jpeg"));
+                ofd.Filters.Add(new CommonFileDialogFilter("Jacket Image", "*.png;*.bmp;*.jpg;*.jpeg"));
                 if (ofd.ShowDialog() == CommonFileDialogResult.Ok)
                 {
                     var bmp = new Bitmap(ofd.FileName);
-                    if(bmp.Size != new Size(512,512))
+                    if(bmp.Size.Width != bmp.Size.Height)
                     {
-                        MessageBox.Show($"Error: Jacket size must be exactly 512x512 pixels!", "WACCA Song Injector", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show($"Error: Jacket size must be a square!", "WACCA Song Injector", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
-                    bmp = bmp.Clone(new Rectangle(0, 0, 512, 512), PixelFormat.Format32bppArgb);
+                    bmp = bmp.Clone(new Rectangle(0, 0, bmp.Size.Width, bmp.Size.Height), PixelFormat.Format32bppArgb);
 
                     var asset = UAsset.DeserializeJson(new MemoryStream(WSongInject.Properties.Resources.jacketJson));
 
@@ -519,21 +517,28 @@ namespace WSongInject
                     {
                         jacket.ObjectName = new FName(jacketAssetNameBox.Text.Substring(3));
 
+                        // Convert the texture to BGRA data
+                        var pixels = new byte[4 * bmp.Size.Width * bmp.Size.Height];
+                        int i = 0;
+                        for (int y = 0; y < bmp.Size.Height; y++)
+                        {
+                            for (int x = 0; x < bmp.Size.Width; x++)
+                            {
+                                // winforms fucking sucks so I had to do this.
+                                // what a terrible, slow piece of code
+                                var c = bmp.GetPixel(x, y);
+                                pixels[i++] = c.B;
+                                pixels[i++] = c.G;
+                                pixels[i++] = c.R;
+                                pixels[i++] = c.A;
+                            }
+                        }
+                        var texture = new FTexture2D(bmp.Size.Width, bmp.Size.Height, pixels);
+
                         using (var ms = new MemoryStream())
                         using (var writer = new BinaryWriter(ms))
                         {
-                            writer.Write(Convert.FromBase64String(jacketHeader));
-                            for (int y = 0; y < 512; y++)
-                            {
-                                for (int x = 0; x < 512; x++)
-                                {
-                                    // winforms fucking sucks so I had to do this.
-                                    // what a terrible, slow piece of code
-                                    var c = bmp.GetPixel(x, y);
-                                    writer.Write(new byte[4] { c.B, c.G, c.R, c.A });
-                                }
-                            }
-                            writer.Write(Convert.FromBase64String(jacketFooter));
+                            texture.Write(writer);
                             jacket.Extras = ms.ToArray();
                         }
 
