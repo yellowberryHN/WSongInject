@@ -16,7 +16,7 @@ namespace WSongInject.Unreal
 	        0x0E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         };
 
-        uint ContainerSize { get; set; } // Size of Texture2D + 1110
+        uint ContainerSize { get; set; } // Size of Texture2D + ?
         FTexturePlatformData TexturePlatformData { get; set; }
 
         public FTexture2D(BinaryReader binaryReader)
@@ -31,7 +31,7 @@ namespace WSongInject.Unreal
         public FTexture2D(int width, int height, byte[] pixels)
         {
             TexturePlatformData = new FTexturePlatformData(width, height, pixels);
-            ContainerSize = (uint)TexturePlatformData.CalculatePlatformDataSize() + 1110u;
+            ContainerSize = (uint)TexturePlatformData.CalculatePlatformDataSize() + ?;
         }
 
         public void Write(BinaryWriter writer)
