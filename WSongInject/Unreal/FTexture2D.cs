@@ -36,6 +36,10 @@ namespace WSongInject.Unreal
 
         public void Write(BinaryWriter writer)
         {
+            if (!BitConverter.IsLittleEndian)
+                // must double check the result of Write() (must be written as LE)
+                throw new Exception("Big-endian not handled yet");
+
             writer.Write(Header);
             writer.Write(ContainerSize);
             TexturePlatformData.Write(writer);
