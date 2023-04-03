@@ -141,6 +141,7 @@
             this.difficultyExtremeLvUpDown = new WSongInject.DifficultyNUD();
             this.difficultyHardLvUpDown = new WSongInject.DifficultyNUD();
             this.difficultyNormalLvUpDown = new WSongInject.DifficultyNUD();
+            this.loadSongDataBtn = new System.Windows.Forms.Button();
             this.songTabs.SuspendLayout();
             this.mptTab.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -233,7 +234,6 @@
             this.waccaDirBox.Name = "waccaDirBox";
             this.waccaDirBox.Size = new System.Drawing.Size(594, 20);
             this.waccaDirBox.TabIndex = 8;
-            this.waccaDirBox.Text = "C:\\SDFELR";
             // 
             // songTabs
             // 
@@ -1433,14 +1433,19 @@
             0,
             0,
             65536});
+            this.difficultyExtremeLvUpDown.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            65536});
             this.difficultyExtremeLvUpDown.Name = "difficultyExtremeLvUpDown";
             this.difficultyExtremeLvUpDown.Size = new System.Drawing.Size(52, 20);
             this.difficultyExtremeLvUpDown.TabIndex = 55;
             this.difficultyExtremeLvUpDown.Value = new decimal(new int[] {
-            1,
+            10,
             0,
             0,
-            0});
+            65536});
             this.difficultyExtremeLvUpDown.ValueChanged += new System.EventHandler(this.difficultyLvUpDown_ValueChanged);
             // 
             // difficultyHardLvUpDown
@@ -1452,14 +1457,19 @@
             0,
             0,
             65536});
+            this.difficultyHardLvUpDown.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            65536});
             this.difficultyHardLvUpDown.Name = "difficultyHardLvUpDown";
             this.difficultyHardLvUpDown.Size = new System.Drawing.Size(52, 20);
             this.difficultyHardLvUpDown.TabIndex = 48;
             this.difficultyHardLvUpDown.Value = new decimal(new int[] {
-            1,
+            10,
             0,
             0,
-            0});
+            65536});
             this.difficultyHardLvUpDown.ValueChanged += new System.EventHandler(this.difficultyLvUpDown_ValueChanged);
             // 
             // difficultyNormalLvUpDown
@@ -1471,21 +1481,39 @@
             0,
             0,
             65536});
+            this.difficultyNormalLvUpDown.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            65536});
             this.difficultyNormalLvUpDown.Name = "difficultyNormalLvUpDown";
             this.difficultyNormalLvUpDown.Size = new System.Drawing.Size(52, 20);
             this.difficultyNormalLvUpDown.TabIndex = 41;
             this.difficultyNormalLvUpDown.Value = new decimal(new int[] {
-            1,
+            10,
             0,
             0,
-            0});
+            65536});
             this.difficultyNormalLvUpDown.ValueChanged += new System.EventHandler(this.difficultyLvUpDown_ValueChanged);
+            // 
+            // loadSongDataBtn
+            // 
+            this.loadSongDataBtn.Enabled = false;
+            this.loadSongDataBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadSongDataBtn.Location = new System.Drawing.Point(12, 414);
+            this.loadSongDataBtn.Name = "loadSongDataBtn";
+            this.loadSongDataBtn.Size = new System.Drawing.Size(75, 23);
+            this.loadSongDataBtn.TabIndex = 16;
+            this.loadSongDataBtn.Text = "Load Data";
+            this.loadSongDataBtn.UseVisualStyleBackColor = true;
+            this.loadSongDataBtn.Visible = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.loadSongDataBtn);
             this.Controls.Add(this.songTabs);
             this.Controls.Add(this.reloadBtn);
             this.Controls.Add(this.waccaDirBox);
@@ -1494,7 +1522,12 @@
             this.Controls.Add(this.injectBtn);
             this.Controls.Add(this.loadReminder);
             this.Controls.Add(this.label38);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(816, 489);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "MainForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "WACCA Song Injector";
             this.songTabs.ResumeLayout(false);
             this.mptTab.ResumeLayout(false);
@@ -1659,6 +1692,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox infernoGroupBox;
         private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Button loadSongDataBtn;
     }
 }
 

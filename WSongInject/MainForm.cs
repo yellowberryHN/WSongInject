@@ -409,10 +409,12 @@ namespace WSongInject
             if (mpt.ContainsNameReference(FString.FromString(uniqueIDSelect.Value.ToString())))
             {
                 uniqueIDSelect.ForeColor = Color.Red;
+                loadSongDataBtn.Show();
             } 
             else
             {
                 uniqueIDSelect.ForeColor = SystemColors.WindowText;
+                loadSongDataBtn.Hide();
             }
 
             var a = Regex.Match(((int)uniqueIDSelect.Value).ToString("D5"), @"(\d{2})(\d{3})");
