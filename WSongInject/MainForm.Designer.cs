@@ -137,11 +137,11 @@
             this.usefulHints = new System.Windows.Forms.ToolTip(this.components);
             this.loadReminder = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
+            this.importSongDataBtn = new System.Windows.Forms.Button();
             this.difficultyInfernoLvUpDown = new WSongInject.DifficultyNUD();
             this.difficultyExtremeLvUpDown = new WSongInject.DifficultyNUD();
             this.difficultyHardLvUpDown = new WSongInject.DifficultyNUD();
             this.difficultyNormalLvUpDown = new WSongInject.DifficultyNUD();
-            this.loadSongDataBtn = new System.Windows.Forms.Button();
             this.songTabs.SuspendLayout();
             this.mptTab.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -234,6 +234,7 @@
             this.waccaDirBox.Name = "waccaDirBox";
             this.waccaDirBox.Size = new System.Drawing.Size(594, 20);
             this.waccaDirBox.TabIndex = 8;
+            this.waccaDirBox.TextChanged += new System.EventHandler(this.waccaDirBox_TextChanged);
             // 
             // songTabs
             // 
@@ -930,6 +931,7 @@
             this.rubiBox.Name = "rubiBox";
             this.rubiBox.Size = new System.Drawing.Size(100, 20);
             this.rubiBox.TabIndex = 13;
+            this.rubiBox.TextChanged += new System.EventHandler(this.rubiBox_TextChanged);
             this.rubiBox.Leave += new System.EventHandler(this.rubiBox_Leave);
             // 
             // label8
@@ -1410,6 +1412,18 @@
             this.label38.Text = "Use this tool at your own risk. Make backups.";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // importSongDataBtn
+            // 
+            this.importSongDataBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.importSongDataBtn.Location = new System.Drawing.Point(12, 414);
+            this.importSongDataBtn.Name = "importSongDataBtn";
+            this.importSongDataBtn.Size = new System.Drawing.Size(90, 23);
+            this.importSongDataBtn.TabIndex = 16;
+            this.importSongDataBtn.Text = "Import Data";
+            this.importSongDataBtn.UseVisualStyleBackColor = true;
+            this.importSongDataBtn.Visible = false;
+            this.importSongDataBtn.Click += new System.EventHandler(this.importSongDataBtn_Click);
+            // 
             // difficultyInfernoLvUpDown
             // 
             this.difficultyInfernoLvUpDown.DecimalPlaces = 1;
@@ -1496,24 +1510,12 @@
             65536});
             this.difficultyNormalLvUpDown.ValueChanged += new System.EventHandler(this.difficultyLvUpDown_ValueChanged);
             // 
-            // loadSongDataBtn
-            // 
-            this.loadSongDataBtn.Enabled = false;
-            this.loadSongDataBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loadSongDataBtn.Location = new System.Drawing.Point(12, 414);
-            this.loadSongDataBtn.Name = "loadSongDataBtn";
-            this.loadSongDataBtn.Size = new System.Drawing.Size(75, 23);
-            this.loadSongDataBtn.TabIndex = 16;
-            this.loadSongDataBtn.Text = "Load Data";
-            this.loadSongDataBtn.UseVisualStyleBackColor = true;
-            this.loadSongDataBtn.Visible = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.loadSongDataBtn);
+            this.Controls.Add(this.importSongDataBtn);
             this.Controls.Add(this.songTabs);
             this.Controls.Add(this.reloadBtn);
             this.Controls.Add(this.waccaDirBox);
@@ -1692,7 +1694,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox infernoGroupBox;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Button loadSongDataBtn;
+        private System.Windows.Forms.Button importSongDataBtn;
     }
 }
 

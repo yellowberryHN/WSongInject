@@ -1,4 +1,5 @@
-﻿using Microsoft.WindowsAPICodePack.Dialogs;
+﻿using HalfFullWidth;
+using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -253,6 +254,8 @@ namespace WSongInject
 
         private void reloadData()
         {
+            if (!Directory.Exists(waccaDirBox.Text)) throw new DirectoryNotFoundException();
+
             WaccaDir = waccaDirBox.Text;
             LoadMPT();
             LoadUMT();
@@ -409,12 +412,12 @@ namespace WSongInject
             if (mpt.ContainsNameReference(FString.FromString(uniqueIDSelect.Value.ToString())))
             {
                 uniqueIDSelect.ForeColor = Color.Red;
-                loadSongDataBtn.Show();
+                importSongDataBtn.Show();
             } 
             else
             {
                 uniqueIDSelect.ForeColor = SystemColors.WindowText;
-                loadSongDataBtn.Hide();
+                importSongDataBtn.Hide();
             }
 
             var a = Regex.Match(((int)uniqueIDSelect.Value).ToString("D5"), @"(\d{2})(\d{3})");
@@ -424,12 +427,12 @@ namespace WSongInject
 
         private void musicMessageBox_TextChanged(object sender, EventArgs e)
         {
-            rubiBox.Text = musicMessageBox.Text;
+            rubiBox.Text = musicMessageBox.Text.ToFullwidthString();
         }
 
         private void rubiBox_Leave(object sender, EventArgs e)
         {
-            if (rubiBox.Text == String.Empty) rubiBox.Text = musicMessageBox.Text;
+            if (rubiBox.Text == String.Empty) rubiBox.Text = musicMessageBox.Text.ToFullwidthString();
         }
 
         private void validCulturesListBox_SelectedValueChanged(object sender, EventArgs e)
@@ -634,6 +637,23 @@ namespace WSongInject
                 jacket.Extras[20 + i] = newSize[i];
             }
             asset.Write(assetPath);
+        }
+
+        private void waccaDirBox_TextChanged(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void importSongDataBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rubiBox_TextChanged(object sender, EventArgs e)
+        {
+            rubiBox.Text = rubiBox.Text.ToFullwidthString();
+            rubiBox.SelectionStart = rubiBox.Text.Length;
+            rubiBox.SelectionLength = 0;
         }
     }
 }
