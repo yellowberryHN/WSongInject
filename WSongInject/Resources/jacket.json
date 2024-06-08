@@ -155,7 +155,7 @@
     "doWeHaveAssetRegistryData": true,
     "doWeHaveWorldTileInfo": false,
     "NameMap": [
-        "/Game/UI/Textures/JACKET/S00/uT_J_S00_000",
+        "/Game/UI/Textures/JACKET/S00/uT_J_S00",
         "/Script/CoreUObject",
         "/Script/Engine",
         "ByteProperty",
@@ -176,6 +176,7 @@
         "TextureCompressionSettings",
         "TextureGroup",
         "TEXTUREGROUP_UI",
-        "uT_J_S00_000"
+        "uT_J_S00_000",
+        "uT_J_S00"
     ]
 }

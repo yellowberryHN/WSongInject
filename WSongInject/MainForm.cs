@@ -2,16 +2,10 @@
 using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.IO.Pipes;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using UAssetAPI;
 using UAssetAPI.PropertyTypes;
@@ -328,6 +322,12 @@ namespace WSongInject
 
                 ((IntPropertyData)propList[45]).Value = scoreGenreComboBox.SelectedIndex;
 
+                for (int i = 0; i < musicTagsListBox.CheckedItems.Count; i++)
+                {
+                    ((IntPropertyData)propList[46 + i]).Value = (int)MusicTagFromBoxIndex(i);
+                }
+                
+                /*
                 ((IntPropertyData)propList[46]).Value = (int)MusicTagForUnlock0UpDown.Value;
                 ((IntPropertyData)propList[47]).Value = (int)MusicTagForUnlock1UpDown.Value;
                 ((IntPropertyData)propList[48]).Value = (int)MusicTagForUnlock2UpDown.Value;
@@ -338,6 +338,7 @@ namespace WSongInject
                 ((IntPropertyData)propList[53]).Value = (int)MusicTagForUnlock7UpDown.Value;
                 ((IntPropertyData)propList[54]).Value = (int)MusicTagForUnlock8UpDown.Value;
                 ((IntPropertyData)propList[55]).Value = (int)MusicTagForUnlock9UpDown.Value;
+                */
 
                 mpt.AddNameReference(FString.FromString(uniqueIDSelect.Value.ToString()));
                 dt1.Table.Data.Add(newSong);
@@ -400,6 +401,62 @@ namespace WSongInject
 
             MessageBox.Show("written, reloading data...");
             reloadData();
+        }
+
+        private Dictionary<int, MusicTag> musicTagRemap = new Dictionary<int, MusicTag>()
+        {
+            { 0, MusicTag.JENRE_ORIGINAL },
+            { 1, MusicTag.JENRE_JPOP },
+            { 2, MusicTag.JENRE_ANIME },
+            { 3, MusicTag.JENRE_VOCALOID },
+            { 4, MusicTag.JENRE_25D },
+            { 5, MusicTag.JENRE_ANIME_POP },
+            { 6, MusicTag.JENRE_VARIETY },
+            { 7, MusicTag.JENRE_TOHO },
+            { 8, MusicTag.SCORE_ROTATION },
+            { 9, MusicTag.SCORE_HIGH_SPEED },
+            { 10, MusicTag.ARTIST_HARDCORE_TANOC },
+            { 11, MusicTag.ARTIST_REDALICE },
+            { 12, MusicTag.ARTIST_TPAZOLITE },
+            { 13, MusicTag.ARTIST_USAO },
+            { 14, MusicTag.ARTIST_PLIGHT },
+            { 15, MusicTag.ARTIST_DJ_GENKI },
+            { 16, MusicTag.ARTIST_DJ_NORIKEN },
+            { 17, MusicTag.ARTIST_MASSIVE_NEW_KREW },
+            { 18, MusicTag.ARTIST_DJ_MYOSUKE },
+            { 19, MusicTag.ARTIST_KOBARYO },
+            { 20, MusicTag.ARTIST_ARAN },
+            { 21, MusicTag.ARTIST_MINAMOTOYA },
+            { 22, MusicTag.ARTIST_KENTA_VEZ },
+            { 23, MusicTag.ARTIST_NOIZENECIO },
+            { 24, MusicTag.ARTIST_SRAV3R },
+            { 25, MusicTag.ARTIST_GETTY },
+            { 26, MusicTag.ARTIST_LAUR },
+            { 27, MusicTag.ARTIST_GRAM },
+            { 28, MusicTag.ARTIST_ARUFA },
+            { 29, MusicTag.ARTIST_VTUBER },
+            { 30, MusicTag.ARTIST_KIZUNA_AI },
+            { 31, MusicTag.ARTIST_HOLOLIVE },
+            { 32, MusicTag.ARTIST_COSMO },
+            { 33, MusicTag.ARTIST_SAKUZYO },
+            { 34, MusicTag.ARTIST_CAMELLIA },
+            { 35, MusicTag.COLLAB_GROOVE_COASTER },
+            { 36, MusicTag.COLLAB_BLEND_S },
+            { 37, MusicTag.COLLAB_PRETTY_SERIES },
+            { 38, MusicTag.COLLAB_DANMACHI },
+            { 39, MusicTag.COLLAB_LANOTA },
+            { 40, MusicTag.COLLAB_D4DJ },
+            { 41, MusicTag.COLLAB_AZURLANE },
+            { 42, MusicTag.COLLAB_ARCAEA },
+            { 43, MusicTag.COLLAB_MUSEDASH },
+            { 44, MusicTag.DIVE_WITH_U },
+            { 45, MusicTag.BOSS_XTREME },
+            { 46, MusicTag.BOSS_TENSHI }
+        };
+
+        private MusicTag MusicTagFromBoxIndex(int idx)
+        {
+            return musicTagRemap[idx];
         }
 
         private void reloadBtn_Click(object sender, EventArgs e)
@@ -512,6 +569,7 @@ namespace WSongInject
                     if (bmp.Size.Width != bmp.Size.Height)
                     {
                         MessageBox.Show($"Error: Jacket size must be a square!", "WACCA Song Injector", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ofd.Dispose();
                         return;
                     }
                     if (!IsPowerOfTwo((ulong)bmp.Size.Width))
@@ -527,6 +585,8 @@ namespace WSongInject
                     if (asset.Exports[0] is NormalExport jacket)
                     {
                         var baseName = jacketAssetNameBox.Text.Substring(4);
+                        var shortName = baseName.Substring(0, baseName.Length - 4);
+                        
                         jacket.ObjectName = new FName(baseName);
 
                         var texture = BitmapToFTexture2D(asset, bmp);
@@ -538,10 +598,11 @@ namespace WSongInject
                             jacket.Extras = ms.ToArray();
                         }
 
+                        asset.SetNameReference(asset.SearchNameReference(new FString("uT_J_S00")), new FString(shortName));
                         asset.SetNameReference(asset.SearchNameReference(new FString("uT_J_S00_000")), new FString(baseName));
                         asset.SetNameReference(asset.SearchNameReference(
-                            new FString("/Game/UI/Textures/JACKET/S00/uT_J_S00_000")),
-                            new FString($"/Game/UI/Textures/JACKET/{jacketAssetNameBox.Text}")
+                            new FString("/Game/UI/Textures/JACKET/S00/uT_J_S00")),
+                            new FString($"/Game/UI/Textures/JACKET/{jacketAssetNameBox.Text.Substring(0, jacketAssetNameBox.Text.Length - 4)}")
                         );
 
                         var outAssetPath = Path.Combine(WaccaDir, $"WindowsNoEditor/Mercury/Content/UI/Textures/JACKET/{jacketAssetNameBox.Text}.uasset");
@@ -654,6 +715,15 @@ namespace WSongInject
             rubiBox.Text = rubiBox.Text.ToFullwidthString();
             rubiBox.SelectionStart = rubiBox.Text.Length;
             rubiBox.SelectionLength = 0;
+        }
+
+        private void musicTagsListBox_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (musicTagsListBox.CheckedItems.Count < 10) return;
+            if (e.NewValue == CheckState.Checked)
+            {
+                e.NewValue = CheckState.Unchecked;
+            }
         }
     }
 }

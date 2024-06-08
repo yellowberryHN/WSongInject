@@ -66,16 +66,7 @@ namespace WSongInject
 
         public int ScoreGenre = -1;
 
-        public int MusicTagForUnlock0;
-        public int MusicTagForUnlock1;
-        public int MusicTagForUnlock2;
-        public int MusicTagForUnlock3;
-        public int MusicTagForUnlock4;
-        public int MusicTagForUnlock5;
-        public int MusicTagForUnlock6;
-        public int MusicTagForUnlock7;
-        public int MusicTagForUnlock8;
-        public int MusicTagForUnlock9;
+        public MusicTag[] MusicTags = new MusicTag[10];
 
         public UInt64 WorkBuffer;
 
@@ -102,5 +93,56 @@ namespace WSongInject
         }
     }
 
+    public enum MusicTag
+    {
+        INVALID,
+        JENRE_ORIGINAL,
+        JENRE_JPOP,
+        JENRE_ANIME,
+        JENRE_VOCALOID,
+        JENRE_25D,
+        JENRE_ANIME_POP,
+        JENRE_VARIETY,
+        JENRE_TOHO,
+        SCORE_ROTATION = 1000,
+        SCORE_HIGH_SPEED,
+        ARTIST_HARDCORE_TANOC = 10000,
+        ARTIST_REDALICE,
+        ARTIST_TPAZOLITE,
+        ARTIST_USAO,
+        ARTIST_PLIGHT,
+        ARTIST_DJ_GENKI,
+        ARTIST_DJ_NORIKEN,
+        ARTIST_MASSIVE_NEW_KREW,
+        ARTIST_DJ_MYOSUKE,
+        ARTIST_KOBARYO,
+        ARTIST_ARAN,
+        ARTIST_MINAMOTOYA,
+        ARTIST_KENTA_VEZ,
+        ARTIST_NOIZENECIO,
+        ARTIST_SRAV3R,
+        ARTIST_GETTY,
+        ARTIST_LAUR,
+        ARTIST_GRAM,
+        ARTIST_ARUFA = 10100,
+        ARTIST_VTUBER,
+        ARTIST_KIZUNA_AI,
+        ARTIST_HOLOLIVE,
+        ARTIST_COSMO,
+        ARTIST_SAKUZYO,
+        ARTIST_CAMELLIA,
+        COLLAB_GROOVE_COASTER = 10200,
+        COLLAB_BLEND_S,
+        COLLAB_PRETTY_SERIES,
+        COLLAB_DANMACHI,
+        COLLAB_LANOTA,
+        COLLAB_D4DJ,
+        COLLAB_AZURLANE,
+        COLLAB_ARCAEA,
+        COLLAB_MUSEDASH,
+        DIVE_WITH_U,
+        BOSS_XTREME = 20000,
+        BOSS_TENSHI
+    }
 
 }
