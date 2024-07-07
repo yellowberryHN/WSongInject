@@ -587,7 +587,16 @@ namespace WSongInject
                         var baseName = jacketAssetNameBox.Text.Substring(4);
                         var shortName = baseName.Substring(0, baseName.Length - 4);
                         
-                        jacket.ObjectName = new FName(baseName);
+                        // I hate unreal engine so fucking much.
+                        if ((int)uniqueIDSelect.Value % 1000 >= 100)
+                        {
+                            var jacketName = new FName(shortName);
+                            jacketName.Number = ((int)uniqueIDSelect.Value % 1000) + 1;
+
+                            jacket.ObjectName = jacketName;
+                        }
+                        else jacket.ObjectName = new FName(baseName);
+                        
 
                         var texture = BitmapToFTexture2D(asset, bmp);
 
