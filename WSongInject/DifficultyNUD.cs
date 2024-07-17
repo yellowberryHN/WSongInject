@@ -13,7 +13,7 @@ namespace WSongInject
         }
         public override void DownButton()
         {
-            if (this.Value == decimal.One)
+            if (this.Value == decimal.One && this.Minimum < 1)
                 Value = decimal.Zero;
             else base.DownButton();
         }

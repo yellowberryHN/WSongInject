@@ -297,7 +297,54 @@
             // 
             this.musicTagsListBox.CheckOnClick = true;
             this.musicTagsListBox.FormattingEnabled = true;
-            this.musicTagsListBox.Items.AddRange(new object[] { "Genre: Orginal", "Genre: J-Pop", "Genre: Anime", "Genre: Vocaloid", "Genre: 2.5D", "Genre: AniPop", "Genre: Variety", "Genre: Touhou", "Score: Rotation", "Score: High Speed", "Artist: TANO*C", "Artist: REDALICE", "Artist: t+pazolite", "Artist: USAO", "Artist: P*Light", "Artist: Genki", "Artist: Noriken", "Artist: MNK", "Artist: Myosuke", "Artist: Kobaryo", "Artist: aran", "Artist: Minamotoya", "Artist: kenta-v.ez.", "Artist: Noizenecio", "Artist: Srav3R", "Artist: Getty", "Artist: Laur", "Artist: Gram", "Artist: ARuFa", "Artist: VTuber", "Artist: Kizuna AI", "Artist: HOLOLIVE", "Artist: cosMo", "Artist: Sakuzyo", "Artist: Camellia", "Collab: Groove Coaster", "Collab: Blend S", "Collab: Pretty Series", "Collab: Danmachi", "Collab: Lanota", "Collab: D4DJ", "Collab: Azur Lane", "Collab: Arcaea", "Collab: Muse Dash", "DIVE with Ü", "Boss: XTREME", "Boss: TENSHI" });
+            this.musicTagsListBox.Items.AddRange(new object[] {
+            "Genre: Orginal",
+            "Genre: J-Pop",
+            "Genre: Anime",
+            "Genre: Vocaloid",
+            "Genre: 2.5D",
+            "Genre: AniPop",
+            "Genre: Variety",
+            "Genre: Touhou",
+            "Score: Rotation",
+            "Score: High Speed",
+            "Artist: TANO*C",
+            "Artist: REDALICE",
+            "Artist: t+pazolite",
+            "Artist: USAO",
+            "Artist: P*Light",
+            "Artist: Genki",
+            "Artist: Noriken",
+            "Artist: MNK",
+            "Artist: Myosuke",
+            "Artist: Kobaryo",
+            "Artist: aran",
+            "Artist: Minamotoya",
+            "Artist: kenta-v.ez.",
+            "Artist: Noizenecio",
+            "Artist: Srav3R",
+            "Artist: Getty",
+            "Artist: Laur",
+            "Artist: Gram",
+            "Artist: ARuFa",
+            "Artist: VTuber",
+            "Artist: Kizuna AI",
+            "Artist: HOLOLIVE",
+            "Artist: cosMo",
+            "Artist: Sakuzyo",
+            "Artist: Camellia",
+            "Collab: Groove Coaster",
+            "Collab: Blend S",
+            "Collab: Pretty Series",
+            "Collab: Danmachi",
+            "Collab: Lanota",
+            "Collab: D4DJ",
+            "Collab: Azur Lane",
+            "Collab: Arcaea",
+            "Collab: Muse Dash",
+            "DIVE with Ü",
+            "Boss: XTREME",
+            "Boss: TENSHI"});
             this.musicTagsListBox.Location = new System.Drawing.Point(6, 16);
             this.musicTagsListBox.Name = "musicTagsListBox";
             this.musicTagsListBox.Size = new System.Drawing.Size(185, 274);
@@ -308,7 +355,18 @@
             // scoreGenreComboBox
             // 
             this.scoreGenreComboBox.FormattingEnabled = true;
-            this.scoreGenreComboBox.Items.AddRange(new object[] { "Anime (0)", "Vocaloid (1)", "Touhou (2)", "2.5D (3)", "Variety (4)", "Original (5)", "TANO*C (6)", "VTuber (7)", "CUSTOM (8)", "CUSTOM (9)", "CUSTOM (10)" });
+            this.scoreGenreComboBox.Items.AddRange(new object[] {
+            "Anime (0)",
+            "Vocaloid (1)",
+            "Touhou (2)",
+            "2.5D (3)",
+            "Variety (4)",
+            "Original (5)",
+            "TANO*C (6)",
+            "VTuber (7)",
+            "CUSTOM (8)",
+            "CUSTOM (9)",
+            "CUSTOM (10)"});
             this.scoreGenreComboBox.Location = new System.Drawing.Point(208, 109);
             this.scoreGenreComboBox.Name = "scoreGenreComboBox";
             this.scoreGenreComboBox.Size = new System.Drawing.Size(121, 21);
@@ -328,11 +386,19 @@
             // 
             this.previewSecondsUpDown.DecimalPlaces = 2;
             this.previewSecondsUpDown.Location = new System.Drawing.Point(261, 82);
-            this.previewSecondsUpDown.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
+            this.previewSecondsUpDown.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
             this.previewSecondsUpDown.Name = "previewSecondsUpDown";
             this.previewSecondsUpDown.Size = new System.Drawing.Size(68, 20);
             this.previewSecondsUpDown.TabIndex = 41;
-            this.previewSecondsUpDown.Value = new decimal(new int[] { 10, 0, 0, 0 });
+            this.previewSecondsUpDown.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // label31
             // 
@@ -348,7 +414,11 @@
             // 
             this.previewBeginTimeUpDown.DecimalPlaces = 2;
             this.previewBeginTimeUpDown.Location = new System.Drawing.Point(261, 58);
-            this.previewBeginTimeUpDown.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
+            this.previewBeginTimeUpDown.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
             this.previewBeginTimeUpDown.Name = "previewBeginTimeUpDown";
             this.previewBeginTimeUpDown.Size = new System.Drawing.Size(68, 20);
             this.previewBeginTimeUpDown.TabIndex = 39;
@@ -403,13 +473,25 @@
             // clearNormaRateInfernoUpDown
             // 
             this.clearNormaRateInfernoUpDown.DecimalPlaces = 2;
-            this.clearNormaRateInfernoUpDown.Increment = new decimal(new int[] { 5, 0, 0, 131072 });
+            this.clearNormaRateInfernoUpDown.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            131072});
             this.clearNormaRateInfernoUpDown.Location = new System.Drawing.Point(148, 276);
-            this.clearNormaRateInfernoUpDown.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            this.clearNormaRateInfernoUpDown.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.clearNormaRateInfernoUpDown.Name = "clearNormaRateInfernoUpDown";
             this.clearNormaRateInfernoUpDown.Size = new System.Drawing.Size(52, 20);
             this.clearNormaRateInfernoUpDown.TabIndex = 64;
-            this.clearNormaRateInfernoUpDown.Value = new decimal(new int[] { 8, 0, 0, 65536 });
+            this.clearNormaRateInfernoUpDown.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            65536});
             // 
             // infernoClearLabel
             // 
@@ -424,7 +506,11 @@
             // 
             this.difficultyInfernoLvUpDown.DecimalPlaces = 1;
             this.difficultyInfernoLvUpDown.Location = new System.Drawing.Point(45, 276);
-            this.difficultyInfernoLvUpDown.Maximum = new decimal(new int[] { 9999, 0, 0, 65536 });
+            this.difficultyInfernoLvUpDown.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            65536});
             this.difficultyInfernoLvUpDown.Name = "difficultyInfernoLvUpDown";
             this.difficultyInfernoLvUpDown.Size = new System.Drawing.Size(52, 20);
             this.difficultyInfernoLvUpDown.TabIndex = 62;
@@ -468,13 +554,25 @@
             // clearNormaRateExtremeUpDown
             // 
             this.clearNormaRateExtremeUpDown.DecimalPlaces = 2;
-            this.clearNormaRateExtremeUpDown.Increment = new decimal(new int[] { 5, 0, 0, 131072 });
+            this.clearNormaRateExtremeUpDown.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            131072});
             this.clearNormaRateExtremeUpDown.Location = new System.Drawing.Point(148, 200);
-            this.clearNormaRateExtremeUpDown.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            this.clearNormaRateExtremeUpDown.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.clearNormaRateExtremeUpDown.Name = "clearNormaRateExtremeUpDown";
             this.clearNormaRateExtremeUpDown.Size = new System.Drawing.Size(52, 20);
             this.clearNormaRateExtremeUpDown.TabIndex = 57;
-            this.clearNormaRateExtremeUpDown.Value = new decimal(new int[] { 8, 0, 0, 65536 });
+            this.clearNormaRateExtremeUpDown.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            65536});
             // 
             // label22
             // 
@@ -489,12 +587,24 @@
             // 
             this.difficultyExtremeLvUpDown.DecimalPlaces = 1;
             this.difficultyExtremeLvUpDown.Location = new System.Drawing.Point(45, 200);
-            this.difficultyExtremeLvUpDown.Maximum = new decimal(new int[] { 9999, 0, 0, 65536 });
-            this.difficultyExtremeLvUpDown.Minimum = new decimal(new int[] { 10, 0, 0, 65536 });
+            this.difficultyExtremeLvUpDown.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            65536});
+            this.difficultyExtremeLvUpDown.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            65536});
             this.difficultyExtremeLvUpDown.Name = "difficultyExtremeLvUpDown";
             this.difficultyExtremeLvUpDown.Size = new System.Drawing.Size(52, 20);
             this.difficultyExtremeLvUpDown.TabIndex = 55;
-            this.difficultyExtremeLvUpDown.Value = new decimal(new int[] { 10, 0, 0, 65536 });
+            this.difficultyExtremeLvUpDown.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            65536});
             this.difficultyExtremeLvUpDown.ValueChanged += new System.EventHandler(this.difficultyLvUpDown_ValueChanged);
             // 
             // label23
@@ -535,13 +645,25 @@
             // clearNormaRateHardUpDown
             // 
             this.clearNormaRateHardUpDown.DecimalPlaces = 2;
-            this.clearNormaRateHardUpDown.Increment = new decimal(new int[] { 5, 0, 0, 131072 });
+            this.clearNormaRateHardUpDown.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            131072});
             this.clearNormaRateHardUpDown.Location = new System.Drawing.Point(148, 129);
-            this.clearNormaRateHardUpDown.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            this.clearNormaRateHardUpDown.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.clearNormaRateHardUpDown.Name = "clearNormaRateHardUpDown";
             this.clearNormaRateHardUpDown.Size = new System.Drawing.Size(52, 20);
             this.clearNormaRateHardUpDown.TabIndex = 50;
-            this.clearNormaRateHardUpDown.Value = new decimal(new int[] { 55, 0, 0, 131072 });
+            this.clearNormaRateHardUpDown.Value = new decimal(new int[] {
+            55,
+            0,
+            0,
+            131072});
             // 
             // label18
             // 
@@ -556,12 +678,24 @@
             // 
             this.difficultyHardLvUpDown.DecimalPlaces = 1;
             this.difficultyHardLvUpDown.Location = new System.Drawing.Point(45, 129);
-            this.difficultyHardLvUpDown.Maximum = new decimal(new int[] { 9999, 0, 0, 65536 });
-            this.difficultyHardLvUpDown.Minimum = new decimal(new int[] { 10, 0, 0, 65536 });
+            this.difficultyHardLvUpDown.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            65536});
+            this.difficultyHardLvUpDown.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            65536});
             this.difficultyHardLvUpDown.Name = "difficultyHardLvUpDown";
             this.difficultyHardLvUpDown.Size = new System.Drawing.Size(52, 20);
             this.difficultyHardLvUpDown.TabIndex = 48;
-            this.difficultyHardLvUpDown.Value = new decimal(new int[] { 10, 0, 0, 65536 });
+            this.difficultyHardLvUpDown.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            65536});
             this.difficultyHardLvUpDown.ValueChanged += new System.EventHandler(this.difficultyLvUpDown_ValueChanged);
             // 
             // label19
@@ -602,13 +736,25 @@
             // clearNormaRateNormalUpDown
             // 
             this.clearNormaRateNormalUpDown.DecimalPlaces = 2;
-            this.clearNormaRateNormalUpDown.Increment = new decimal(new int[] { 5, 0, 0, 131072 });
+            this.clearNormaRateNormalUpDown.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            131072});
             this.clearNormaRateNormalUpDown.Location = new System.Drawing.Point(148, 58);
-            this.clearNormaRateNormalUpDown.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            this.clearNormaRateNormalUpDown.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.clearNormaRateNormalUpDown.Name = "clearNormaRateNormalUpDown";
             this.clearNormaRateNormalUpDown.Size = new System.Drawing.Size(52, 20);
             this.clearNormaRateNormalUpDown.TabIndex = 43;
-            this.clearNormaRateNormalUpDown.Value = new decimal(new int[] { 45, 0, 0, 131072 });
+            this.clearNormaRateNormalUpDown.Value = new decimal(new int[] {
+            45,
+            0,
+            0,
+            131072});
             // 
             // label17
             // 
@@ -623,12 +769,24 @@
             // 
             this.difficultyNormalLvUpDown.DecimalPlaces = 1;
             this.difficultyNormalLvUpDown.Location = new System.Drawing.Point(45, 58);
-            this.difficultyNormalLvUpDown.Maximum = new decimal(new int[] { 9999, 0, 0, 65536 });
-            this.difficultyNormalLvUpDown.Minimum = new decimal(new int[] { 10, 0, 0, 65536 });
+            this.difficultyNormalLvUpDown.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            65536});
+            this.difficultyNormalLvUpDown.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            65536});
             this.difficultyNormalLvUpDown.Name = "difficultyNormalLvUpDown";
             this.difficultyNormalLvUpDown.Size = new System.Drawing.Size(52, 20);
             this.difficultyNormalLvUpDown.TabIndex = 41;
-            this.difficultyNormalLvUpDown.Value = new decimal(new int[] { 10, 0, 0, 65536 });
+            this.difficultyNormalLvUpDown.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            65536});
             this.difficultyNormalLvUpDown.ValueChanged += new System.EventHandler(this.difficultyLvUpDown_ValueChanged);
             // 
             // label16
@@ -669,7 +827,11 @@
             // versionNoUpDown
             // 
             this.versionNoUpDown.Location = new System.Drawing.Point(97, 112);
-            this.versionNoUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            this.versionNoUpDown.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.versionNoUpDown.Name = "versionNoUpDown";
             this.versionNoUpDown.Size = new System.Drawing.Size(66, 20);
             this.versionNoUpDown.TabIndex = 36;
@@ -704,7 +866,11 @@
             // trainingLevelUpDown
             // 
             this.trainingLevelUpDown.Location = new System.Drawing.Point(203, 286);
-            this.trainingLevelUpDown.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
+            this.trainingLevelUpDown.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.trainingLevelUpDown.Name = "trainingLevelUpDown";
             this.trainingLevelUpDown.Size = new System.Drawing.Size(68, 20);
             this.trainingLevelUpDown.TabIndex = 21;
@@ -741,7 +907,11 @@
             // waccaPointCostUpDown
             // 
             this.waccaPointCostUpDown.Location = new System.Drawing.Point(181, 214);
-            this.waccaPointCostUpDown.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
+            this.waccaPointCostUpDown.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
             this.waccaPointCostUpDown.Name = "waccaPointCostUpDown";
             this.waccaPointCostUpDown.Size = new System.Drawing.Size(68, 20);
             this.waccaPointCostUpDown.TabIndex = 17;
@@ -764,14 +934,25 @@
             this.bRecommendChk.Size = new System.Drawing.Size(126, 17);
             this.bRecommendChk.TabIndex = 15;
             this.bRecommendChk.Text = "Recommended Chart";
-            this.usefulHints.SetToolTip(this.bRecommendChk, "Will show up in the recommended category in genre select, in addition to it\'s gen" + "re category.");
+            this.usefulHints.SetToolTip(this.bRecommendChk, "Will show up in the recommended category in genre select, in addition to it\'s gen" +
+        "re category.");
             this.bRecommendChk.UseVisualStyleBackColor = true;
             // 
             // validCulturesListBox
             // 
             this.validCulturesListBox.CheckOnClick = true;
             this.validCulturesListBox.FormattingEnabled = true;
-            this.validCulturesListBox.Items.AddRange(new object[] { "Japan", "USA", "Taiwan", "Hong Kong", "Singapore", "Korea", "China (Guest)", "China (User)", "China (VIP)", "Offline" });
+            this.validCulturesListBox.Items.AddRange(new object[] {
+            "Japan",
+            "USA",
+            "Taiwan",
+            "Hong Kong",
+            "Singapore",
+            "Korea",
+            "China (Guest)",
+            "China (User)",
+            "China (VIP)",
+            "Offline"});
             this.validCulturesListBox.Location = new System.Drawing.Point(6, 191);
             this.validCulturesListBox.Name = "validCulturesListBox";
             this.validCulturesListBox.Size = new System.Drawing.Size(111, 154);
@@ -801,6 +982,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(6, 6);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(18, 13);
@@ -887,12 +1069,24 @@
             // uniqueIDSelect
             // 
             this.uniqueIDSelect.Location = new System.Drawing.Point(30, 4);
-            this.uniqueIDSelect.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
-            this.uniqueIDSelect.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            this.uniqueIDSelect.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.uniqueIDSelect.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.uniqueIDSelect.Name = "uniqueIDSelect";
             this.uniqueIDSelect.Size = new System.Drawing.Size(120, 20);
             this.uniqueIDSelect.TabIndex = 5;
-            this.uniqueIDSelect.Value = new decimal(new int[] { 10001, 0, 0, 0 });
+            this.uniqueIDSelect.Value = new decimal(new int[] {
+            10001,
+            0,
+            0,
+            0});
             this.uniqueIDSelect.ValueChanged += new System.EventHandler(this.uniqueIDSelect_ValueChanged);
             // 
             // label5
@@ -965,7 +1159,11 @@
             // inf_gainWaccaPoint
             // 
             this.inf_gainWaccaPoint.Location = new System.Drawing.Point(59, 171);
-            this.inf_gainWaccaPoint.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
+            this.inf_gainWaccaPoint.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
             this.inf_gainWaccaPoint.Name = "inf_gainWaccaPoint";
             this.inf_gainWaccaPoint.Size = new System.Drawing.Size(68, 20);
             this.inf_gainWaccaPoint.TabIndex = 69;
@@ -994,7 +1192,11 @@
             // 
             this.requiredInfernoOpenWaccaPointUpDown.Enabled = false;
             this.requiredInfernoOpenWaccaPointUpDown.Location = new System.Drawing.Point(61, 40);
-            this.requiredInfernoOpenWaccaPointUpDown.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
+            this.requiredInfernoOpenWaccaPointUpDown.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
             this.requiredInfernoOpenWaccaPointUpDown.Name = "requiredInfernoOpenWaccaPointUpDown";
             this.requiredInfernoOpenWaccaPointUpDown.Size = new System.Drawing.Size(68, 20);
             this.requiredInfernoOpenWaccaPointUpDown.TabIndex = 61;
@@ -1024,7 +1226,11 @@
             // inf_itemActivateEndTimeUpDown
             // 
             this.inf_itemActivateEndTimeUpDown.Location = new System.Drawing.Point(88, 118);
-            this.inf_itemActivateEndTimeUpDown.Maximum = new decimal(new int[] { -1, 2147483647, 0, 0 });
+            this.inf_itemActivateEndTimeUpDown.Maximum = new decimal(new int[] {
+            -1,
+            2147483647,
+            0,
+            0});
             this.inf_itemActivateEndTimeUpDown.Name = "inf_itemActivateEndTimeUpDown";
             this.inf_itemActivateEndTimeUpDown.Size = new System.Drawing.Size(68, 20);
             this.inf_itemActivateEndTimeUpDown.TabIndex = 66;
@@ -1050,7 +1256,11 @@
             // inf_itemActivateStartTimeUpDown
             // 
             this.inf_itemActivateStartTimeUpDown.Location = new System.Drawing.Point(88, 92);
-            this.inf_itemActivateStartTimeUpDown.Maximum = new decimal(new int[] { -1, 2147483647, 0, 0 });
+            this.inf_itemActivateStartTimeUpDown.Maximum = new decimal(new int[] {
+            -1,
+            2147483647,
+            0,
+            0});
             this.inf_itemActivateStartTimeUpDown.Name = "inf_itemActivateStartTimeUpDown";
             this.inf_itemActivateStartTimeUpDown.Size = new System.Drawing.Size(68, 20);
             this.inf_itemActivateStartTimeUpDown.TabIndex = 64;
@@ -1058,7 +1268,11 @@
             // gainWaccaPointUpDown
             // 
             this.gainWaccaPointUpDown.Location = new System.Drawing.Point(59, 210);
-            this.gainWaccaPointUpDown.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
+            this.gainWaccaPointUpDown.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
             this.gainWaccaPointUpDown.Name = "gainWaccaPointUpDown";
             this.gainWaccaPointUpDown.Size = new System.Drawing.Size(68, 20);
             this.gainWaccaPointUpDown.TabIndex = 54;
@@ -1088,7 +1302,11 @@
             // itemActivateEndTimeUpDown
             // 
             this.itemActivateEndTimeUpDown.Location = new System.Drawing.Point(88, 157);
-            this.itemActivateEndTimeUpDown.Maximum = new decimal(new int[] { -1, 2147483647, 0, 0 });
+            this.itemActivateEndTimeUpDown.Maximum = new decimal(new int[] {
+            -1,
+            2147483647,
+            0,
+            0});
             this.itemActivateEndTimeUpDown.Name = "itemActivateEndTimeUpDown";
             this.itemActivateEndTimeUpDown.Size = new System.Drawing.Size(68, 20);
             this.itemActivateEndTimeUpDown.TabIndex = 51;
@@ -1105,7 +1323,11 @@
             // itemActivateStartTimeUpDown
             // 
             this.itemActivateStartTimeUpDown.Location = new System.Drawing.Point(88, 131);
-            this.itemActivateStartTimeUpDown.Maximum = new decimal(new int[] { -1, 2147483647, 0, 0 });
+            this.itemActivateStartTimeUpDown.Maximum = new decimal(new int[] {
+            -1,
+            2147483647,
+            0,
+            0});
             this.itemActivateStartTimeUpDown.Name = "itemActivateStartTimeUpDown";
             this.itemActivateStartTimeUpDown.Size = new System.Drawing.Size(68, 20);
             this.itemActivateStartTimeUpDown.TabIndex = 49;
@@ -1133,7 +1355,11 @@
             // 
             this.requiredMusicOpenWaccaPointUpDown.Enabled = false;
             this.requiredMusicOpenWaccaPointUpDown.Location = new System.Drawing.Point(61, 79);
-            this.requiredMusicOpenWaccaPointUpDown.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
+            this.requiredMusicOpenWaccaPointUpDown.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
             this.requiredMusicOpenWaccaPointUpDown.Name = "requiredMusicOpenWaccaPointUpDown";
             this.requiredMusicOpenWaccaPointUpDown.Size = new System.Drawing.Size(68, 20);
             this.requiredMusicOpenWaccaPointUpDown.TabIndex = 46;
@@ -1162,7 +1388,11 @@
             // adaptEndTimeUpDown
             // 
             this.adaptEndTimeUpDown.Location = new System.Drawing.Point(95, 32);
-            this.adaptEndTimeUpDown.Maximum = new decimal(new int[] { -1, 2147483647, 0, 0 });
+            this.adaptEndTimeUpDown.Maximum = new decimal(new int[] {
+            -1,
+            2147483647,
+            0,
+            0});
             this.adaptEndTimeUpDown.Name = "adaptEndTimeUpDown";
             this.adaptEndTimeUpDown.Size = new System.Drawing.Size(68, 20);
             this.adaptEndTimeUpDown.TabIndex = 43;
@@ -1179,7 +1409,11 @@
             // adaptStartTimeUpDown
             // 
             this.adaptStartTimeUpDown.Location = new System.Drawing.Point(95, 6);
-            this.adaptStartTimeUpDown.Maximum = new decimal(new int[] { -1, 2147483647, 0, 0 });
+            this.adaptStartTimeUpDown.Maximum = new decimal(new int[] {
+            -1,
+            2147483647,
+            0,
+            0});
             this.adaptStartTimeUpDown.Name = "adaptStartTimeUpDown";
             this.adaptStartTimeUpDown.Size = new System.Drawing.Size(68, 20);
             this.adaptStartTimeUpDown.TabIndex = 41;
@@ -1230,7 +1464,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(810, 460);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.importSongDataBtn);
             this.Controls.Add(this.songTabs);
             this.Controls.Add(this.reloadBtn);
@@ -1246,7 +1480,7 @@
             this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "MainForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "WACCA Song Injector";
+            this.Text = "WSongInject";
             this.songTabs.ResumeLayout(false);
             this.mptTab.ResumeLayout(false);
             this.mptTab.PerformLayout();
@@ -1283,6 +1517,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.adaptStartTimeUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.CheckedListBox musicTagsListBox;

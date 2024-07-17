@@ -265,10 +265,10 @@ namespace WSongInject
 
         private void injectBtn_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Are you sure you want to inject this song?", "WACCA Song Injector", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            if(MessageBox.Show("Are you sure you want to inject this song?", "WSongInject", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 if (mpt.ContainsNameReference(FString.FromString(uniqueIDSelect.Value.ToString())))
-                    MessageBox.Show($"Error: can't inject a song with ID {uniqueIDSelect.Value} as one already exists!", "WACCA Song Injector", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Error: can't inject a song with ID {uniqueIDSelect.Value} as one already exists!", "WSongInject", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else inject();
             }
         }
