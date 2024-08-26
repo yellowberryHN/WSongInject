@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using UAssetAPI;
@@ -53,9 +54,9 @@ namespace WSongInject
                 Value = new List<PropertyData>
                 {
                     new UInt32PropertyData(new FName("UniqueID")) { Value = id },
-                    new StrPropertyData(new FName("MusicMessage")) { Value = new FString("-") },
-                    new StrPropertyData(new FName("ArtistMessage")) { Value = new FString("-") },
-                    new StrPropertyData(new FName("CopyrightMessage")) { Value = new FString("-") },
+                    new StrPropertyData(new FName("MusicMessage")) { Value = new FString("-", Encoding.Unicode) },
+                    new StrPropertyData(new FName("ArtistMessage")) { Value = new FString("-", Encoding.Unicode) },
+                    new StrPropertyData(new FName("CopyrightMessage")) { Value = new FString("-", Encoding.Unicode) },
                     new UInt32PropertyData(new FName("VersionNo")) { Value = 0 },
                     new StrPropertyData(new FName("AssetDirectory")) { Value = new FString(assetId) },
                     new StrPropertyData(new FName("MovieAssetName")) { Value = new FString("-") },
@@ -63,7 +64,7 @@ namespace WSongInject
                     new StrPropertyData(new FName("MovieAssetNameExpert")) { Value = null },
                     new StrPropertyData(new FName("MovieAssetNameInferno")) { Value = null },
                     new StrPropertyData(new FName("JacketAssetName")) { Value = new FString(jacketName)},
-                    new StrPropertyData(new FName("Rubi")) { Value = new FString("-") },
+                    new StrPropertyData(new FName("Rubi")) { Value = new FString("-", Encoding.Unicode) },
 
                     new BoolPropertyData(new FName("bValidCulture_ja_JP")) { Value = false },
                     new BoolPropertyData(new FName("bValidCulture_en_US")) { Value = false },
@@ -88,10 +89,10 @@ namespace WSongInject
                     new StrPropertyData(new FName("Bpm")) { Value = new FString("-") },
                     new StrPropertyData(new FName("HashTag")) { Value = new FString(assetId + "_CUSTOM") },
 
-                    new StrPropertyData(new FName("NotesDesignerNormal")) { Value = new FString("-") },
-                    new StrPropertyData(new FName("NotesDesignerHard")) { Value = new FString("-") },
-                    new StrPropertyData(new FName("NotesDesignerExpert")) { Value = new FString("-") },
-                    new StrPropertyData(new FName("NotesDesignerInferno")) { Value = new FString("-") },
+                    new StrPropertyData(new FName("NotesDesignerNormal")) { Value = new FString("-", Encoding.Unicode) },
+                    new StrPropertyData(new FName("NotesDesignerHard")) { Value = new FString("-", Encoding.Unicode) },
+                    new StrPropertyData(new FName("NotesDesignerExpert")) { Value = new FString("-", Encoding.Unicode) },
+                    new StrPropertyData(new FName("NotesDesignerInferno")) { Value = new FString("-", Encoding.Unicode) },
 
                     new FloatPropertyData(new FName("DifficultyNormalLv")) { Value = 0 },
                     new FloatPropertyData(new FName("DifficultyHardLv")) { Value = 0 },
@@ -456,7 +457,7 @@ namespace WSongInject
 
         private MusicTag MusicTagFromBoxIndex(int idx)
         {
-            return musicTagRemap[idx];
+            return musicTagRemap[musicTagsListBox.CheckedIndices[idx]];
         }
 
         private void reloadBtn_Click(object sender, EventArgs e)
