@@ -485,12 +485,12 @@ namespace WSongInject
 
         private void musicMessageBox_TextChanged(object sender, EventArgs e)
         {
-            rubiBox.Text = musicMessageBox.Text.ToFullwidthString();
+            rubiBox.Text = musicMessageBox.Text.ToUpper().ToFullwidthString();
         }
 
         private void rubiBox_Leave(object sender, EventArgs e)
         {
-            if (rubiBox.Text == String.Empty) rubiBox.Text = musicMessageBox.Text.ToFullwidthString();
+            if (rubiBox.Text == String.Empty) rubiBox.Text = musicMessageBox.Text.ToUpper().ToFullwidthString();
         }
 
         private void validCulturesListBox_SelectedValueChanged(object sender, EventArgs e)
@@ -722,7 +722,7 @@ namespace WSongInject
 
         private void rubiBox_TextChanged(object sender, EventArgs e)
         {
-            rubiBox.Text = rubiBox.Text.ToFullwidthString();
+            rubiBox.Text = rubiBox.Text.ToUpper().ToFullwidthString();
             rubiBox.SelectionStart = rubiBox.Text.Length;
             rubiBox.SelectionLength = 0;
         }
